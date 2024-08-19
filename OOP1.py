@@ -86,11 +86,11 @@ a = Animal(10, 10)
 
 
 class Cat:
-    def __init__(self, name, age,color,paroda) -> None:
+    def __init__(self, name, age,color,tip) -> None:
         self.name = name
         self.age = age
         self.color = color
-        self.paroda = paroda
+        self.tip = tip
         
 
 def eat(self):
@@ -103,4 +103,4 @@ def meow(self):
     return f"{self.name} is meowing"
 
 def __str__(self) -> str:
-    return f"{self.name} {self.age} {self.color} {self.paroda}"
+    return f"{self.name} {self.age} {self.color} {self.tip}"

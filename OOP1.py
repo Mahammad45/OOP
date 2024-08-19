@@ -93,14 +93,24 @@ class Cat:
         self.tip = tip
         
 
-def eat(self):
-    return f"{self.name} is eating"
+    def eat(self):
+        return f"{self.name} is eating"
 
-def sleep(self):
-    return f"{self.name} is sleeping"
+    def sleep(self):
+        return f"{self.name} is sleeping"
 
-def meow(self):
-    return f"{self.name} is meowing"
+    def meow(self):
+        return f"{self.name} is meowing"
 
-def __str__(self) -> str:
-    return f"{self.name} {self.age} {self.color} {self.tip}"
+    def __str__(self) -> str:
+        return f"{self.name} {self.age} {self.color} {self.tip}"
+
+cat1 = Cat("Barsik", 3, "black", "persian")
+cat2 = Cat("Murzik", 5, "white", "siamese")
+cat3 = Cat("Kuzia", 2, "gray", "british")
+cat4= Cat("cort", 4, "black", "british")
+
+print(cat1)
+print(cat1.eat())
+print(cat2.sleep())
+print(cat3.meow())

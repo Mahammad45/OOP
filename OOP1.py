@@ -68,11 +68,11 @@ class Animal:
 
 a = Animal(10, 10)
 
-print(a.x)
-print(a.y)
-print(a.slogeniya())
-print(a.umnogenniya())
-print(a)
+# print(a.x)
+# print(a.y)
+# print(a.slogeniya())
+# print(a.umnogenniya())
+# print(a)
 
 # class A:
 #     def name(self):
@@ -82,4 +82,13 @@ print(a)
 # print(b.name())
 
 
-''.replace('l', 'k')
+# ''.replace('l', 'k')
+
+
+class Cat:
+    def __init__(self, name, age,color,paroda) -> None:
+        self.name = name
+        self.age = age
+        self.color = color
+        self.paroda = paroda
+        

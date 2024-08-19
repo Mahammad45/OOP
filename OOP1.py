@@ -92,3 +92,12 @@ class Cat:
         self.color = color
         self.paroda = paroda
         
+
+def eat(self):
+    return f"{self.name} is eating"
+
+def sleep(self):
+    return f"{self.name} is sleeping"
+
+def meow(self):
+    return f"{self.name} is meowing"

@@ -101,3 +101,6 @@ def sleep(self):
 
 def meow(self):
     return f"{self.name} is meowing"
+
+def __str__(self) -> str:
+    return f"{self.name} {self.age} {self.color} {self.paroda}"

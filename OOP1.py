@@ -6,3 +6,6 @@ def summm(x,y):
     return x+y
 
 print(summm(10, 10))
+
+class Animal:
+    

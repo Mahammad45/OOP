@@ -8,4 +8,5 @@ def summm(x,y):
 print(summm(10, 10))
 
 class Animal:
-    
+    def __init__(self) -> None:
+        pass

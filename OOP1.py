@@ -64,3 +64,22 @@ class Animal:
     
     def __str__(self) -> str:
         return "Class Animal"
+
+
+a = Animal(10, 10)
+
+print(a.x)
+print(a.y)
+print(a.slogeniya())
+print(a.umnogenniya())
+print(a)
+
+# class A:
+#     def name(self):
+#         return "class name 'A'"
+    
+# b = A()
+# print(b.name())
+
+
+''.replace('l', 'k')

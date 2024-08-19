@@ -171,16 +171,16 @@ class Product:
 
         
 
-    def ready(self):
+    def old(self):
         return f"{self.name} is old"
 
-    def wait(self):
+    def new(self):
         return f"{self.name} is new"
 
-    def stop(self):
+    def finish(self):
         return f"{self.name} is finish"
     
-    def start(self):
+    def last(self):
         return f"{self.name} is last 1"
 
     def __str__(self) -> str:
@@ -195,8 +195,8 @@ product5 = Product("Butter", "ButterCompany", "butter", 5.0, "butter for human",
 
 
 print(product1)
-print(product4.ready())
-print(product2.wait())
-print(product3.stop())
-
+print(product4.old())
+print(product2.new())
+print(product3.last())
+print(product5.finish())
 

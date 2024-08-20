@@ -75,6 +75,10 @@ class BankAccount:
         else:
             return "Сумма снятия не должна быть нулем или меньше."
 
+    def get_balance(self):
+        """Метод для получения текущего баланса."""
+
+        return f"Ваш Баланс составлает {self.__balance}"
 
 account1 = BankAccount('Marselle', 100)
 

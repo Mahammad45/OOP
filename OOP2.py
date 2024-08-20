@@ -161,3 +161,90 @@ book5=LibraryBook("The Hobbit", "J.R.R. Tolkien", True)
 
 print(book.check_out())
 print(book.status())
+
+
+
+
+
+class Car:
+    def __init__(self, make, model, year,__fuel_level,__engine_on) -> None:
+        self.make = make
+        self.model = model
+        self.year = year
+        self.__fuel_level = __fuel_level
+        __engine_on=__engine_on
+
+    def drive(self, distance):
+        self.__fuel_level += distance
+        return f"The {self.make} {self.model} has been driven for {distance} miles. Total __fuel_level: {self.__fuel_level}"
+
+    def engine_on(self):
+        return f"{self.make} {self.model} engine is on"
+    def start_engine(self):
+        self.__engine_on = True
+        return f"{self.make} {self.model} engine is on"
+    def stop_engine(self):
+        self.__engine_on = False
+        return f"{self.make} {self.model} engine is off"
+    def drive(self, distance):
+        if self.__engine_on:
+            self.__fuel_level -= distance
+            return f"The {self.make} {self.model} has been driven for {distance} miles. Total __fuel_level: {self.__fuel_level}"
+        else:
+            return f"{self.make} {self.model} engine is off. Cannot drive."
+    def refuel(self, amount):
+        self.__fuel_level += amount
+        return f"{self.make} {self.model} has been refueled by {amount} miles. Total __fuel_level: {self.__fuel_level}"
+    def get_fuel_level(self):
+        return f"Total __fuel_level: {self.__fuel_level}"
+    def status(self):
+        if self.__engine_on:
+            return f"{self.make} {self.model} engine is on"
+        else:
+            return f"{self.make} {self.model} engine is off"
+        
+    def refuel(self, amount):
+        self.__fuel_level += amount
+        return f"{self.make} {self.model} has been refueled by {amount} miles. Total __fuel_level: {self.__fuel_level}"
+    
+    def __str__(self) -> str:
+        return f"Car {self.make} {self.model} ({self.year}) - {self.__fuel_level} miles"
+    
+    
+
+car1 = Car("Toyota", "Camry", 2020, 10, False)
+car2 = Car("Honda", "Civic", 2019, 15, True)
+car3= Car("Ford", "Mustang", 2021, 8, False)
+car4= Car("Chevrolet", "Corvette", 2022, 12, True)
+
+# print(car1.drive(100))
+# print(car1.start_engine())
+# print(car1.drive(50))
+# print(car2.drive(200))
+# print(car2.stop_engine())
+# print(car2.drive(30))
+
+
+
+class Smartphone:
+    def __init__(self, brand, model, __battery_level) -> None:
+        self.brand = brand
+        self.model = model
+        self.__battery_level = __battery_level
+
+    def call(self, number):
+        if self.__battery_level > 0:
+            self.__battery_level -= 1
+            return f"Calling {number} from {self.brand} {self.model}"
+        else:
+            return "Battery is low. Cannot make a call."
+
+    def charge(self, amount):
+        self.__battery_level += amount
+        return f"Battery level is now {self.__battery_level}"
+
+    def get_battery_level(self):
+        return f"Battery level: {self.__battery_level}"
+
+    def __str__(self) -> str:
+        return f"Smartphone {self.brand} {self.model} - {self.__battery_level}%"

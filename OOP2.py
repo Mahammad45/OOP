@@ -153,3 +153,11 @@ class LibraryBook:
 
 
 book=LibraryBook("The Great Gatsby", "F. Scott Fitzgerald", False)
+book1=LibraryBook("To Kill a Mockingbird", "Harper Lee", True)
+book2=LibraryBook("1984", "George Orwell", False)
+book3=LibraryBook("Pride and Prejudice", "Jane Austen", True)
+book4=LibraryBook("The Catcher in the Rye", "J.D. Salinger", False)
+book5=LibraryBook("The Hobbit", "J.R.R. Tolkien", True)
+
+print(book.check_out())
+print(book.status())

@@ -227,10 +227,11 @@ car4= Car("Chevrolet", "Corvette", 2022, 12, True)
 
 
 class Smartphone:
-    def __init__(self, brand, model, __battery_level) -> None:
+    def __init__(self, brand, model, __battery_level,__is_on ) -> None:
         self.brand = brand
         self.model = model
         self.__battery_level = __battery_level
+        __is_on =__is_on 
 
     def call(self, number):
         if self.__battery_level > 0:
@@ -248,3 +249,28 @@ class Smartphone:
 
     def __str__(self) -> str:
         return f"Smartphone {self.brand} {self.model} - {self.__battery_level}%"
+    def turn_on(self):
+        self.__is_on = True
+        return f"{self.brand} {self.model} is on"
+    def turn_off(self):
+        self.__is_on = False
+        return f"{self.brand} {self.model} is off"
+    def use(self, minutes):
+        if self.__is_on:
+            self.__battery_level -= minutes / 60
+            return f"{self.brand} {self.model} has been used for {minutes} minutes. Battery level: {self.__battery_level}"
+        else:
+            return f"{self.brand} {self.model} is off. Cannot use."
+    def charge(self, amount):
+        self.__battery_level += amount
+        return f"Battery level is now {self.__battery_level}"
+    def get_battery_level(self):
+        return f"Battery level: {self.__battery_level}"
+    
+
+
+phone1 = Smartphone("iPhone", "X", 50, False)
+phone2 = Smartphone("Samsung", "Galaxy S21", 70, True)
+phone3 = Smartphone("Google", "Pixel 5", 60, False)
+
+print(phone1.call(5551234))

@@ -213,16 +213,10 @@ class Car:
     
 
 car1 = Car("Toyota", "Camry", 2020, 10, False)
-car2 = Car("Honda", "Civic", 2019, 15, True)
-car3= Car("Ford", "Mustang", 2021, 8, False)
-car4= Car("Chevrolet", "Corvette", 2022, 12, True)
 
-# print(car1.drive(100))
-# print(car1.start_engine())
-# print(car1.drive(50))
-# print(car2.drive(200))
-# print(car2.stop_engine())
-# print(car2.drive(30))
+print(car1.start_engine())
+
+
 
 
 
@@ -273,4 +267,4 @@ phone1 = Smartphone("iPhone", "X", 50, False)
 phone2 = Smartphone("Samsung", "Galaxy S21", 70, True)
 phone3 = Smartphone("Google", "Pixel 5", 60, False)
 
-print(phone1.call(5551234))
+# print(phone1.call(5551234))

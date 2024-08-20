@@ -1,34 +1,44 @@
-import os
-import sys
+import os 
+from time import sleep
+os.system('clear')
 
-os.sysyem('clear')
-
-# Инкапсуляция
-# public      | общественный
-# protect _    | защищать
-# private __    | частный
-
+# Инкапсуляция  🚨
+# public         | общественный
+# protect _      | защищать
+# private __     | частный
 
 class Teapot:
-    def __init__(self,name,year,color) -> None:
+    def __init__(self, name, year, color) -> None:
         self.name = name
-        self._year = year
-        self.__color = color
-
+        self.year = year
+        self.color = color
+    
     def on(self):
-        return(f'{self.name} is on')
-    def off(self):
-        return(f'{self.name} is off')
+        print(f"{self.name} is on")
+        sleep(15)
+        print(self.__heating())
+        sleep(15)
+        print(self.__boiling())
+        sleep(2)
+        return self._off()
+
+    def _off(self):
+        return f"{self.name} is off" 
+
+    def __heating(self):
+        return f"{self.name} is heating"
     
-    def heating(self):
-        return(f'{self.name} is heating')
-    
+    def __boiling(self):
+        return f"{self.name} is boiling"
+
     def __str__(self) -> str:
-        return(f'{self.name} {self._year} {self.__color}')
+        return f"Teapot {self.name} - {self.year} {self.color}"
     
 
-    Teapot = Teapot('LG', 2020, 'black')
-    Teapot1= Teapot('BEKO', 2019, 'white')
-    Teapot2= Teapot('SAMSUNG', 2018, 'red')
-    Teapot3= Teapot('TERMAX', 2017, 'blue')
-    Teapot4= Teapot('Teapot', 2016, 'green')
+teapot1 = Teapot("LG", 2023, "red")
+teapot2 = Teapot("Termax", 2022, "blue")
+teapot3 = Teapot("Samsung", 2021, "black")
+
+print(teapot1.on())
+# print(teapot1._off())
+# print(teapot1.__heating())

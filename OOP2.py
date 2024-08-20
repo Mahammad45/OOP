@@ -45,25 +45,39 @@ teapot3 = Teapot("Samsung", 2021, "black")
 
 
 
+
+
+
 class BankAccount:
-    def __init__(self, owner, balance=0):
+    def __init__(self, owner, balance) -> None:
         self.owner = owner
-        self.__balance__ = balance
+        self.__balance = balance
 
     def deposit(self, amount):
         """Метод для пополнения счета."""
+
         if amount > 0:
-            self.__balance__+= amount
-            print(f"{amount} has been deposited. New balance is {self.__balance__}")
+            self.__balance += amount
+            return f"{amount} был добавлен на ваш счет. Теперь ваш баланс составляет {self.__balance}"
+        
         else:
-            return "Deposit amount must be positive."
+            return "Сумма депозита не должна быть нулем или меньше."
 
     def withdraw(self, amount):
-        if amount > self.__balance__:
-            print("Insufficient funds")
-        else:
-            self.__balance__ -= amount
-            print(f"{amount} has been withdrawn. New balance is {self.__balance__}")
+        """Метод для снятия денег со счета."""
 
-    def __str__(self):
-        return f"Account of {self.owner} with balance {self.__balance__}"
+        if amount > 0:
+            if amount <= self.__balance:
+                self.__balance -= amount
+                return f"{amount} был снят с вашего счета. Теперь ваш баланс составляет {self.__balance}"
+            else:
+                return "Недостаточно средств на счету."
+        else:
+            return "Сумма снятия не должна быть нулем или меньше."
+
+
+account1 = BankAccount('Marselle', 100)
+
+print(account1.deposit(500))
+print(account1.withdraw(300))
+
